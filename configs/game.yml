@@ -1,0 +1,6 @@
+screen:
+  title: "Minesweeper"
+  width: 640
+  height: 640
+  color_bits: 32
+  background_color: "#DDDDDD"

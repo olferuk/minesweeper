@@ -1,0 +1,42 @@
+field_draw:
+  cell_size: adaptive  # can be "adaptive" or any fixed number
+  field_margin: 24  # ignored if cell_size is a fixed number
+  border_width: 1
+  font:
+    name: arialrounded
+    size: adaptive
+  colors:
+    cell: "#FAE1B9"
+    cell_hovered: "#FAD7A0"
+    cell_opened: "#B9D2FA"
+    border: "#343434"
+    flag: "#4936F4"
+    mine: "#000000"
+    mine_flare: "#7D7D7D"
+    mine_flare_center: "#DDDDDD"
+    mine_cell: "#FD8282"
+
+lvl_1:
+  name: "Tutorial"
+  rows: 5
+  cols: 5
+  mines: 3
+
+# Windows XP one love, the setting are taken from there <3
+lvl_2:
+  name: "Easy"
+  rows: 9
+  cols: 9
+  mines: 10
+
+lvl_3:
+  name: "Medium"
+  rows: 16
+  cols: 16
+  mines: 40
+
+lvl_4:
+  name: "Hard"
+  rows: 16
+  cols: 30
+  mines: 99

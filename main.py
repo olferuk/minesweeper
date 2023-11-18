@@ -9,7 +9,7 @@ pygame.init()
 
 builder = GameBuilder()
 screen = builder.build_screen()
-field, field_drawer = builder.build_field(level_number=1)
+field, field_drawer = builder.build_field(level_number=4)
 
 mouse_pos = (0, 0)
 mouse_cell = (-1, -1)
@@ -69,6 +69,7 @@ while True:
 
         elif event.type == events.KEYDOWN:
             if event.key == events.K_SPACE:
+                print("--- Starting a new game ---")
                 field.create()
                 field_is_blocked = False
                 safe_click = True

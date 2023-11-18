@@ -65,7 +65,9 @@ class FieldDrawer:
 
         elif cell.is_opened and cell.num_mines_around > 0:
             label = self.font.render(f"{cell.num_mines_around}", True, (0, 0, 0))
-            screen.blit(label, (x + ss / 2 - label.get_width() / 2, y + ss / 2 - label.get_height() / 2))
+            screen.blit(
+                label, (x + ss / 2 - label.get_width() / 2, y + ss / 2 - label.get_height() / 2)
+            )
 
         if cell.has_flag:
             s0 = ss / 5
@@ -80,29 +82,27 @@ class FieldDrawer:
 
     def _calculate_font_size(self, config):
         size = config.field_draw.font.size
-        size = int(self.cell_size*0.75) if size == "adaptive" else size
+        size = int(self.cell_size * 0.75) if size == "adaptive" else size
         self.font = font.SysFont(self.cfg.font.name, size)
 
     def _calculate_field_size(self, config, field):
         margin = config.field_draw.field_margin
+
         if config.field_draw.cell_size == "adaptive":
+            # the screen is horizontal — fitting the height first
             if config.screen.width > config.screen.height:
                 space = config.screen.height - margin * 2
                 self.cell_size = int(space / field.rows)
-                self.origin = (
-                    (config.screen.width - field.cols * self.cell_size) / 2,
-                    margin,
-                )
+            # the screen is vertical — fitting the width first
             else:
                 space = config.screen.width - margin * 2
                 self.cell_size = int(space / field.cols)
-                self.origin = (
-                    margin,
-                    (config.screen.height - field.rows * self.cell_size) // 2,
-                )
+                # print(space, self.cell_size, self.cell_size*field.cols, self.cell_size*field.rows)
         else:
             self.cell_size = config.field_draw.cell_size
-            self.origin = (
-                (config.screen.width - field.cols * self.cell_size) // 2,
-                (config.screen.height - field.rows * self.cell_size) // 2,
-            )
+
+        # setting the point of origin
+        self.origin = (
+            (config.screen.width - field.cols * self.cell_size) // 2,
+            (config.screen.height - field.rows * self.cell_size) // 2,
+        )

@@ -12,3 +12,19 @@ Controls:
 * `SPACE` — Restart game and create a new field.
 * `RIGHT MOUSE CLICK` — Denote cell with a flag to make it safe.
 * `LEFT MOUSE CLICK` — Opens a closed cell. Or, when clicked a cell with number, opens all neighboring cells, except cells with flags.
+
+## How to install?
+
+```bash
+make install
+# or
+pip install -r requirements.txt
+```
+
+## How to play?
+
+```bash
+make play
+# or
+python main.py
+```

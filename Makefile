@@ -1,5 +1,8 @@
 IMAGE_NAME = minesweeper
 
+install:
+	pip install -r requirements.txt
+
 build:
 	docker build -t $(IMAGE_NAME) .
 
@@ -15,4 +18,4 @@ style:
 play:
 	python main.py
 
-.PHONY: build dev run style play
+.PHONY: build dev run style play install

@@ -2,6 +2,8 @@
 
 Written in Pygame.
 
+![demo](https://github.com/olferuk/minesweeper/assets/4611107/1ec239b3-ef31-4fdd-ac53-281a742cd3bf)
+
 ## How to play a minesweeper game?
 
 The goal of the game is to open all cells but those with mines. The cells may contain a mine, or a number denoting the number of adjacent mines (diagonals included), or just be empty.
